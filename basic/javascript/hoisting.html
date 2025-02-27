@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(a) //undefind
+        var a = 5
+        console.log(a) //5
+
+        console.log(b) //error
+        let b = 10
+
+        function buildPerson(name, age) {
+            console.log(name + " is " + age + " years old.")
+            return { name: name, age: age }
+        }
+
+        const { name } = buildPerson("홍길동", 25)
+        const person = buildPerson("홍길동", 25)
+        console.log(name, person.name) //둘다 홍길동으로 같은 값
+
+        function buildArray(a, b, c) {
+            return [a, b, c]
+        }
+
+        const [, second,] = buildArray(10, 20, 30)
+        console.log(second) //20
+
+    </script>
+</body>
+
+</html>

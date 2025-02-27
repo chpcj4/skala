@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 학습</h1>
+    <script>
+        document.write("<h1>자바스크립트 학습</h1>")
+        console.log('에러확인')
+
+        const boolean1 = 10 > 20
+        console.log(boolean1)
+
+        const studentScore = [80, 70, 90, 60]
+        console.log(studentScore)
+        console.log(studentScore[1])
+        studentScore[4] = 10
+        console.log(studentScore)
+        
+        const person = {
+            name: '홍길동',
+            age: 25,
+            address: '한양'
+        }
+
+        console.log(person.name, person['address'])
+
+        let something = ""
+        let nothing = null
+
+        const isSameThing1 = something == nothing
+        const isSameThing2 = something === nothing
+        console.log(isSameThing1)
+        console.log(isSameThing2)
+    </script>
+</body>
+</html>

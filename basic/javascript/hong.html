@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "홍길동",
+            age: 30,
+            job: "의적",
+            skills: ["검술", "전략", "분신"],
+            shadow: {
+                color: "검은색",
+                length: 1
+            }
+        }
+
+        const duplicatePerson = JSON.parse(JSON.stringify(person))
+
+        duplicatePerson.skills.pop()
+        delete duplicatePerson.shadow
+
+        console.log(person)
+        console.log(duplicatePerson)
+    </script>
+</body>
+</html>

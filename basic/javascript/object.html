@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const book1 = new Object()
+        book1.title = "피노키오"
+        book1.country = "이탈리아"
+        book1.greet = function () {
+            return this.title
+        }
+        book1.hi = function () {
+            return "hi"
+        }
+
+        const book2 = Object.create(book1)
+
+        console.log(book1) //{title: '피노키오', country: '이탈리아', greet: ƒ, hi: ƒ}
+        console.log(book2) //{}
+        console.log(book2.title, book2.greet()) //피노키오 피노키오
+    </script>
+</body>
+</html>

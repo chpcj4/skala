@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+        width: 200px;
+        height: 100px;
+        background-color: lightgray;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 100px;
+        }
+        .newBox {
+        width: 400px;
+        height: 200px;
+        /* background-color: rgb(136, 34, 34); */
+        margin-top: 10px;
+        text-align: center;
+        line-height: 100px;
+        }
+        .newBoxColor {
+            background-color: aqua;
+        }
+        .highlight {
+        background-color: yellow;
+        }
+        .btn {
+        padding: 10px 20px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv" class="box">내 박스</div>
+    <button id="myButton" type="button">Click Me</button>
+    <script>
+        let div = document.getElementById("myDiv");
+        let button = document.getElementById('myButton');
+        button.onclick = () => {
+            // 클래스 읽기
+            console.log(div.className); // 출력: "box"
+            // 클래스 변경
+            div.className = "newBox newBoxColor"; // 기존 클래스가 "newBox"로 변경
+            console.log(div.className); // 출력: "newBox"
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="image.html">
+        <fieldset>
+            <legend>회원가입</legend>
+            <label for="username">사용자 이름: </label>
+            <input type="text" id="username" name="username" placeholder="이름을 입력해주세요" required /> <br>
+
+            <label for="email">이메일: </label>
+            <input type="email" id="email" name="email" placeholder="xxxx@gmail.com" required /> <br>
+
+            <label for="password">비밀번호: </label>
+            <input type="password" id="password" name="password" required /> <br>
+
+            <label for="date">날짜입력</label>
+            <input type="date" id="date" name="date" required /> <br>
+
+            <label for="newsletter">뉴스레터 구독: </label>
+            <input type="checkbox" id="newsletter" name="newsletter" /> <br>
+        </fieldset>
+
+        <label for="gender">성별: </label>
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female" required />
+        <label for="female">여성</label> <br>
+
+        <label for="color">색상: </label>
+        <input type="color" id="color" name="color"> <br>
+
+        <label for="file">파일 업로드: </label>
+        <input type="file" id="file" name="file"> <br>
+
+        <button type="submit">제출</button>
+    </form>
+</body>
+
+</html>

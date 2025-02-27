@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = ["이상해씨", "파이리", "꼬부기"]
+        for(let i=0; i < arr.length; i++) {
+            if (arr[i] == "이상해씨") {
+                continue
+            }
+            console.log(arr[i])
+        }
+        console.log(arr)
+        console.table(arr)
+
+
+        const person = {
+            name: "홍길동",
+            age: 25,
+            address: "한양"
+        }
+
+        for (let key in person) {
+            console.log(key, person[key])
+        }
+    </script>
+</body>
+</html>

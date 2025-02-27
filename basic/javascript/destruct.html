@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function buildPerson(name, age) {
+            console.log(`${name} is ${age} years old.`)
+            return {name: name, age: age}
+        }
+
+        const { name } = buildPerson("홍길동", 25)
+        const person = buildPerson("홍길동", 25)
+        console.log(person.name, name)
+    </script>
+</body>
+</html>

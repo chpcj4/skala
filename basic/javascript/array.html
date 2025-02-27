@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pokemon = ["이상해씨", "파이리", "꼬부기"]
+        const score = [10, 40, 90]
+        const myPokemon = [...pokemon, ...score]
+        myPokemon.length = 10
+        score[4] = 60
+        console.log(score)
+        console.log(score[3])
+        myPokemon.push("피카츄")
+        myPokemon.shift()
+        console.log(pokemon, myPokemon)
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="doLoad()">
+    <button>Click me</button>
+    <script>
+        function doLoad() {
+            let newparagraph2 =document.createElement("p")
+            newparagraph2.textContent = '페이지가 로드 된 후 생성된 글'
+        }
+
+        let newparagraph =document.createElement("p")
+        newparagraph.textContent = 'This is a dynamically added paragraph'
+        document.body.append(newparagraph)
+
+        const titles = document.getElementsByTagName('title')
+        console.log(titles)
+        titles[0].textContent = '요소 생성 및 추가'
+
+        let firstParagraph = document.querySelector('p')
+        console.log(firstParagraph)
+        document.body.removeChild(firstParagraph)
+
+        function doAlert() {
+            alert('Clicked!')
+        }
+        let button = document.querySelector('button')
+        button.onclick = doAlert
+        // button.onclick = () => alert('Clicked!')
+        // button.addEventListener('click', () => alert('Clicked!'))
+
+        button.setAttribute('disabled', 'true')
+        console.log(button.getAttribute('disabled'))
+    </script>
+</body>
+</html>
