@@ -1,0 +1,8 @@
+students =
+[
+    {"name": "Alice", "scores": {"math": 85, "science": 90, "english": 88}},
+    {"name": "Bob", "scores": {"math": 78, "science": 85, "english": 92}},
+    {"name": "Charlie", "scores": {"math": 92, "science": 88, "english": 95}},
+    {"name": "David", "scores": {"math": 76, "science": 82, "english": 79}},
+    {"name": "Eve", "scores": {"math": 89, "science": 94, "english": 87}}
+]
