@@ -94,7 +94,7 @@ print(results_df)
 
 # 향후 5년의 'year' 값 생성
 last_year = df["year"].max()  # 마지막 연도
-future_years = np.arange(last_year + 1, last_year + 6)  # 다음 5년
+future_years = np.arange(last_year + 1, last_year + 11)  # 다음 5년
 
 # 미래 데이터의 독립변수 (연도) 준비
 future_X = pd.DataFrame(future_years, columns=["year"])
@@ -105,6 +105,9 @@ future_y_pred = model.predict(future_X)
 # 예측값을 DataFrame으로 변환
 future_df = pd.DataFrame(future_y_pred, columns=y_test.columns)
 future_df["year"] = future_years  # 연도 추가
+
+# 기존 df와 future_df 병합
+df = pd.concat([df, future_df], axis=0, ignore_index=True)
 
 # 색상 리스트 (각 컬럼에 대해 고유한 색상 할당)
 colors = [
@@ -123,50 +126,83 @@ colors = [
 ]
 
 # 그래프 크기 설정
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(10, 10))
 
-# 기존의 데이터를 기반으로 그래프 그리기 (투명도 적용)
-for idx, column in enumerate(y.columns):
-    plt.plot(
+# 1행 2열 그리드 생성
+fig, ax = plt.subplots(2, 1, figsize=(10, 10))
+
+# 기존의 데이터를 기반으로 그래프 그리기
+for idx, column in enumerate(y.columns[0:4]):
+    ax[0].plot(
         df["year"],
         df[column],
         marker="o",
-        linestyle="--",
+        linestyle="-",
         color=colors[idx],
         label=f"Original {column}",
-        alpha=0.5,
     )
 
     # 추세선 추가 (선형 회귀로 추세선 생성)
     p = np.polyfit(df["year"], df[column], 1)  # 1차 함수로 추세선 피팅
     trend_line = np.polyval(p, df["year"])  # 추세선 계산
-    plt.plot(
+    ax[0].plot(
         df["year"], trend_line, linestyle="--", color=colors[idx], alpha=0.3
     )  # 추세선 그리기
 
-# 예측된 값을 기존 그래프에 추가 (불투명하게 표시)
-for idx, column in enumerate(future_df.columns[:-1]):  # 'year'은 제외
-    plt.plot(
-        future_df["year"],
-        future_df[column],
-        marker="*",
-        linestyle="--",
-        color=colors[idx],
-        label=f"Predicted {column}",
-        alpha=1.0,
+# 첫 번째 그래프의 제목과 레이블 추가
+ax[0].set_title("Yearly Emissions and Industry Data", fontsize=14)
+ax[0].set_xlabel("Year", fontsize=12)
+ax[0].set_ylabel("Value", fontsize=12)
+
+# 범례
+ax[0].legend(loc="center left", bbox_to_anchor=(1, 0.5), ncol=1, title="Data Type")
+
+# 그리드 표시
+ax[0].grid(True)
+
+# 2023년과 2027년 세로선 추가
+ax[0].axvline(x=2023, color='b', linestyle='--', alpha=0.7, label="2023")  # 2023년 세로선
+# ax[0].axvline(x=2028, color='g', linestyle='--', alpha=0.7, label="2028")  # 2028년 세로선
+
+# 각 세로선에 년도 텍스트 추가
+ax[0].text(2023, ax[0].get_ylim()[1] * 0.95, "2023", color='b', fontsize=12, ha='center')  # 2023년 텍스트
+ax[0].text(2028, ax[0].get_ylim()[1] * 0.95, "2028", color='g', fontsize=12, ha='center')  # 2028년 텍스트
+
+# 기존의 데이터를 기반으로 그래프 그리기
+for idx, column in enumerate(y.columns[4:]):
+    ax[1].plot(
+        df["year"],
+        df[column],
+        marker="o",
+        linestyle="-",
+        color=colors[idx + 4],
+        label=f"Original {column}",
     )
 
-# 제목과 레이블 추가
-plt.title("Yearly Emissions and Industry Data with 5-Year Forecast")
-plt.xlabel("Year")
-plt.ylabel("Value")
+    # 추세선 추가 (선형 회귀로 추세선 생성)
+    p = np.polyfit(df["year"], df[column], 1)  # 1차 함수로 추세선 피팅
+    trend_line = np.polyval(p, df["year"])  # 추세선 계산
+    ax[1].plot(
+        df["year"], trend_line, linestyle="--", color=colors[idx + 4], alpha=0.3
+    )  # 추세선 그리기
 
-# 범례 추가 (왼쪽으로 이동하고, 원본과 예측값을 세로로 구분)
-plt.legend(loc="center left", bbox_to_anchor=(1, 0.5), ncol=1, title="Data Type")
+# 두 번째 그래프의 제목과 레이블 추가
+ax[1].set_xlabel("Year", fontsize=12)
+ax[1].set_ylabel("Value", fontsize=12)
 
-# 눈금 설정
-plt.xticks(rotation=45)
-plt.grid(True)
+# 범례 추가
+ax[1].legend(loc="center left", bbox_to_anchor=(1, 0.5), ncol=1, title="Data Type")
+
+# 그리드 표시
+ax[1].grid(True)
+
+# 2023년과 2027년 세로선 추가
+ax[1].axvline(x=2023, color='b', linestyle='--', alpha=0.7, label="2023")  # 2023년 세로선
+ax[1].axvline(x=2028, color='g', linestyle='--', alpha=0.7, label="2028")  # 2028년 세로선
+
+# 각 세로선에 년도 텍스트 추가
+ax[1].text(2023, ax[1].get_ylim()[1] * 0.95, "2023", color='b', fontsize=12, ha='center')  # 2023년 텍스트
+ax[1].text(2028, ax[1].get_ylim()[1] * 0.95, "2028", color='g', fontsize=12, ha='center')  # 2028년 텍스트
 
 # 그래프 표시 및 저장 (bbox_inches='tight' 추가)
 IMAGE_FILE_PATH = "esg_2022_with_forecast_and_trends.jpg"
