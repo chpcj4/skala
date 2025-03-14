@@ -1,4 +1,4 @@
-package skalajava;
+// package skalajava;
 
 public class skalatest3 {
     public static void main(String[] args) {

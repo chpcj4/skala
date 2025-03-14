@@ -1,4 +1,8 @@
-package skalajava;
+// package skala;
+
+enum LoginChannel {
+    FACEBOOK, KAKAO, APPLE, NAVER, DEFAULT
+}
 
 public class skalatest2 {
     public static void main(String[] args) {
@@ -27,15 +31,15 @@ public class skalatest2 {
         System.out.println("FACEBOOK Login");
     }
     private static void kakaoLogin() {
-        System.out.println("FACEBOOK Login");
+        System.out.println("KAKAO Login");
     }
     private static void appleLogin() {
-        System.out.println("FACEBOOK Login");
+        System.out.println("APPLE Login");
     }
     private static void naverLogin() {
-        System.out.println("FACEBOOK Login");
+        System.out.println("NAVER Login");
     }
     private static void defaultLogin() {
-        System.out.println("FACEBOOK Login");
+        System.out.println("DEFAULT Login");
     }
 }
