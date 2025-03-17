@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // import java.util.Arrays;
 import java.util.List;
 
-public class StreamMain {
+public class MyStreamMain {
 
     private final static List<Product> products = new ArrayList<>();
 
@@ -33,40 +33,21 @@ public class StreamMain {
     
     }
 
-    // Java 8 이전
-    // Stream API를 사용하지 않고 필터링
-    public static void filterBeforeJava8() {
-        int count = 0;
-        for(Product p : products) {
-            if(p.isUsable()) {
-                if(p.getPrice() <= 100000) {
-                    count++;
-                }
-            }
-        }
-        System.out.println("현재 판매 중이고 가격이 십만원 이하인 상품의 개수 : " + count + "개 "); 
-    }
-
     // Java 8 이후
     // Stream API를 사용하여 필터링
-    public static void filterJava8() {
+    public static void myfilterJava8() {
         Stream<Product> stream = products.stream();
-        long count = stream
-            .filter(p -> p.isUsable())
-            .filter(p -> p.getPrice() <= 100000)            
-            .count();
-        
-            System.out.println("현재 판매 중이고 가격이 십만원 이하인 상품의 개수 : " + count + "개 "); 
+        long cnt = stream.filter(p -> p.isUsable())
+                         .filter(p -> p.getPrice() <= 100000)
+                         .count();
+        System.out.println(cnt);
     }
 
     public static void main(String[] args) {
         setProduct();
 
-        // Java 8 이전
-        filterBeforeJava8();
-
         // Stream API 사용
-        // filterJava8();
+        myfilterJava8();
     }
     
 }

@@ -1,3 +1,5 @@
+// package skalajava;
+
 import java.util.Stack;
 
 public class StackExample {
