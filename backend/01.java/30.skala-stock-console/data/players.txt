@@ -1,6 +1,4 @@
 admin,600,TechCorp:100:5|GreenEnergy:80:5
-sangmin,9200,GreenEnergy:80:10
-abc,9000,TechCorp:100:10
-smint,9400,HealthPlus:120:5
-lsmin,9600,GreenEnergy:80:5
-skala,206800,TechCorp:100:200|GreenEnergy:80:80|HealthPlus:120:140
+skala,1475037400,TechCorp:100:20000|GreenEnergy:80:80|HealthPlus:120:139|sk c&c:2000:3
+himang10,195000,TechCorp:100:50
+skala123,4989640,HealthPlus:120:3|TechCorp:100:100

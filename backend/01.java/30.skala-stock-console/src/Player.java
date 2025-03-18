@@ -1,23 +1,25 @@
 import java.util.ArrayList;
+import java.util.List;
 
 class Player {
+    // 사용자 ID
     private String playerId;
     private int playerMoney;
-    private ArrayList<PlayerStock> playerStocks = new ArrayList<>();
+    private List<PlayerStock> playerStocks = new ArrayList<>();
 
     public Player() {
     }
 
     public Player(String id) {
         this.playerId = id;
-        this.playerMoney = 10000;
+        this.playerMoney = 10_000;
     }
 
-    public void setplayerId(String id) {
+    public void setPlayerId(String id) {
         this.playerId = id;
     }
 
-    public String getplayerId() {
+    public String getPlayerId() {
         return this.playerId;
     }
 
@@ -29,11 +31,11 @@ class Player {
         this.playerMoney = money;
     }
 
-    public ArrayList<PlayerStock> getPlayerStocks() {
+    public List<PlayerStock> getPlayerStocks() {
         return this.playerStocks;
     }
 
-    public void setPlayerStocks(ArrayList<PlayerStock> stocks) {
+    public void setPlayerStocks(List<PlayerStock> stocks) {
         this.playerStocks = stocks;
     }
 
