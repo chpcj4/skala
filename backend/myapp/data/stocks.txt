@@ -1,0 +1,5 @@
+TechCorp,100
+GreenEnergy,80
+HealthPlus,120
+samsung,10
+kakao,12

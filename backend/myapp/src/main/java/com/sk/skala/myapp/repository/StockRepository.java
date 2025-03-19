@@ -1,3 +1,5 @@
+package com.sk.skala.myapp.repository;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -5,9 +7,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-// import java.util.stream.Collectors;
 
-class StockRepository {
+import org.springframework.stereotype.Repository;
+
+import com.sk.skala.myapp.model.Stock;
+import com.sk.skala.myapp.model.StockConstants;
+
+import lombok.Data;
+// import lombok.Getter;
+
+@Data
+@Repository
+public class StockRepository {
 
     // 주식 정보를 저장할 파일 (형식 - "주식명,주가")
     private final String STOCK_FILE = "data/stocks.txt";
@@ -47,15 +58,6 @@ class StockRepository {
         } catch (IOException e) {
             System.out.println("파일에 저장하는 중 오류가 발생했습니다.");
         }
-    }
-
-    public void addNewStock(String name, int price) {
-        stockList.add(new Stock(name, price));
-        saveStockList();
-    }
-
-    public void removeStock(Stock stock) {
-        
     }
 
     // 파일 라인을 Stock 객체로 변환
