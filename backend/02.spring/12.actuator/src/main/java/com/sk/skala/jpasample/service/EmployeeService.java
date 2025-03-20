@@ -6,11 +6,13 @@ import com.sk.skala.jpasample.repository.DepartmentRepository;
 import com.sk.skala.jpasample.repository.EmployeeRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmployeeService {
@@ -20,11 +22,13 @@ public class EmployeeService {
 
     // 모든 직원 조회
     public List<Employee> getAllEmployees() {
+        log.debug("#### getAllEmployees() called");
         return employeeRepository.findAll();
     }
 
     // 특정 부서의 직원 조회
     public List<Employee> getEmployeesByDepartment(Long departmentId) {
+        log.debug("#### getEmployeesByDepartment() called");
         return employeeRepository.findByDepartmentId(departmentId);
     }
 
@@ -38,7 +42,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    // 직원 정보 업데이트
+    // 직원 이름 정보 업데이트
     @Transactional
     public Employee updateEmployee(Long id, Employee employeeDetails, Long departmentId) {
         Employee employee = employeeRepository.findById(id)

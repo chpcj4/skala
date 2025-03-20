@@ -3,3 +3,4 @@ GreenEnergy,80
 HealthPlus,120
 samsung,10
 kakao,12
+sk c&c,10000

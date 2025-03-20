@@ -1,0 +1,8 @@
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/ActuatorApplication.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/controller/EmployeeController.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/model/Department.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/model/Employee.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/repository/DepartmentRepository.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/repository/EmployeeRepository.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/service/DepartmentService.java
+/config/shared-dir/collaboration/backend/02.spring/12.actuator/src/main/java/com/sk/skala/jpasample/service/EmployeeService.java
